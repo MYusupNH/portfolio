@@ -1,0 +1,566 @@
+/* ========================================
+   PROJECT PAGE
+======================================== */
+
+.pj-page,
+.pj-page *,
+.pj-page *::before,
+.pj-page *::after {
+  box-sizing: border-box;
+}
+
+.pj-page {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  font-family: Arial, "Segoe UI", system-ui, sans-serif;
+  color: #111;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ),
+    url("/images/kodingan.jpg") center / cover no-repeat,
+    linear-gradient(180deg, #f6f7f8 0%, #fff 60%);
+  background-attachment: fixed;
+}
+
+/* ========================================
+   PROJECT CONTAINER
+======================================== */
+
+.pj-container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 32px 24px 0;
+}
+
+/* ========================================
+   SLIDER
+======================================== */
+
+.pj-slider {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-top: 8px;
+  outline: none;
+}
+
+.pj-scroll {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/*
+  Lebar minimum 720px dipertahankan agar
+  elemen yang memakai satuan cqw tidak rusak.
+  Pada layar kecil, slide bisa digeser horizontal.
+*/
+
+.pj-stage {
+  position: relative;
+  width: 100%;
+  min-width: 720px;
+  max-width: 1440px;
+  margin: 0 auto;
+  aspect-ratio: 738 / 341;
+  overflow: hidden;
+}
+
+.pj-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease;
+  will-change: transform;
+}
+
+/* Setiap slide menjadi container untuk satuan cqw */
+
+.pj-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  container-type: inline-size;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pj-track {
+    transition: none;
+  }
+}
+
+/* ========================================
+   SLIDER CONTROLS
+======================================== */
+
+.pj-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 18px auto 32px;
+  padding: 0 12px;
+}
+
+.pj-ctrl {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #2b2b2b;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.pj-ctrl:hover {
+  background: #5b3fa0;
+  transform: scale(1.06);
+}
+
+.pj-ctrl.ghost {
+  background: transparent;
+  color: #2b2b2b;
+  border: 1.5px solid #2b2b2b;
+}
+
+.pj-ctrl.ghost:hover {
+  background: #2b2b2b;
+  color: #fff;
+}
+
+.pj-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pj-dot {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: #c4c4c4;
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.pj-dot.active {
+  width: 28px;
+  background: #5b3fa0;
+}
+
+/* ========================================
+   SLIDE HEADING
+======================================== */
+
+.pj-heading {
+  position: absolute;
+  top: 4.2%;
+  left: 0;
+  width: 100%;
+  padding: 0 2%;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2cqw;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #e39a2d;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   VERTICAL DIVIDER
+======================================== */
+
+.pj-divider {
+  position: absolute;
+  top: 15.5%;
+  height: 74.5%;
+  width: 0.2cqw;
+  background: #111;
+}
+
+.pj-divider::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -0.2cqw;
+  width: 0.85cqw;
+  height: 0.85cqw;
+  border-radius: 50%;
+  background: #111;
+  transform: translateX(-50%);
+}
+
+/* ========================================
+   LEARNING MEDIA CONTENT
+======================================== */
+
+.pj-title {
+  position: absolute;
+  text-align: center;
+  font-size: 0.95cqw;
+  line-height: 1.3cqw;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.pj-title span {
+  display: block;
+}
+
+.pj-img {
+  position: absolute;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pj-img.shadow {
+  filter: drop-shadow(0 0.3cqw 0.5cqw rgba(0, 0, 0, 0.28));
+}
+
+.pj-caption {
+  position: absolute;
+  text-align: center;
+  font-size: 0.95cqw;
+  line-height: 1.3cqw;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.pj-link {
+  position: absolute;
+  font-size: 0.85cqw;
+  line-height: 1.2cqw;
+  overflow-wrap: anywhere;
+}
+
+.pj-link span {
+  display: block;
+  margin-bottom: 0.2cqw;
+}
+
+.pj-link a {
+  display: block;
+  max-width: 100%;
+  color: #2457c5;
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.pj-text {
+  position: absolute;
+  font-size: 1.02cqw;
+  line-height: 1.72cqw;
+  text-align: justify;
+  overflow-wrap: anywhere;
+}
+
+.pj-text p.left {
+  text-align: left;
+}
+
+.pj-tools {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6cqw;
+  font-size: 0.9cqw;
+}
+
+.pj-tool {
+  flex: 0 0 auto;
+  width: 1.9cqw;
+  height: 1.9cqw;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ========================================
+   WEBSITE PROJECT CARDS
+   Dua project per slide
+======================================== */
+
+.pj-card {
+  position: absolute;
+  top: 14%;
+  width: 44.5%;
+  height: 82%;
+  min-width: 0;
+}
+
+.pj-card.left {
+  left: 3.5%;
+}
+
+.pj-card.right {
+  left: 52%;
+}
+
+/* Browser preview */
+
+.pj-card-browser {
+  height: 49%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 0.2cqw solid #111;
+  border-radius: 0.9cqw;
+  overflow: hidden;
+  box-shadow: 0 0.5cqw 1.2cqw rgba(0, 0, 0, 0.22);
+}
+
+.pj-card-bar {
+  flex: 0 0 auto;
+  min-height: 2.4cqw;
+  display: flex;
+  align-items: center;
+  gap: 0.5cqw;
+  padding: 0 1cqw;
+  background: #2b2b2b;
+}
+
+.pj-card-bar i {
+  flex: 0 0 auto;
+  width: 0.65cqw;
+  height: 0.65cqw;
+  border-radius: 50%;
+}
+
+.pj-card-bar span {
+  min-width: 0;
+  margin-left: 0.8cqw;
+  padding: 0.25cqw 1.2cqw;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #d6d6d6;
+  font-size: 0.8cqw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pj-card-shot {
+  flex: 1 1 auto;
+  min-height: 0;
+  background-color: #e9ecef;
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+/* Project information */
+
+.pj-card-info {
+  min-width: 0;
+  padding-top: 1.1cqw;
+}
+
+.pj-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5cqw 1cqw;
+}
+
+.pj-card-name {
+  min-width: 0;
+  font-size: 1.6cqw;
+  line-height: 2.1cqw;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.pj-web-cat {
+  flex: 0 0 auto;
+  display: inline-block;
+  max-width: 100%;
+  padding: 0.3cqw 1cqw;
+  border-radius: 999px;
+  background: #5b3fa0;
+  color: #fff;
+  font-size: 0.8cqw;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.pj-card-desc {
+  margin-top: 0.6cqw;
+  font-size: 1cqw;
+  line-height: 1.55cqw;
+  text-align: justify;
+  color: #333;
+  overflow-wrap: anywhere;
+}
+
+.pj-web-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4cqw;
+  margin-top: 0.8cqw;
+}
+
+.pj-web-tech span {
+  max-width: 100%;
+  padding: 0.2cqw 0.8cqw;
+  border: 0.15cqw solid #111;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 0.8cqw;
+  overflow-wrap: anywhere;
+}
+
+.pj-web-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6cqw;
+  margin-top: 1cqw;
+}
+
+.pj-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0.6cqw 1.4cqw;
+  border: 0.15cqw solid #5b3fa0;
+  border-radius: 999px;
+  background: #5b3fa0;
+  color: #fff;
+  font-size: 0.9cqw;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  overflow-wrap: anywhere;
+}
+
+.pj-btn:hover {
+  background: #4a2f8a;
+}
+
+.pj-btn.ghost {
+  background: transparent;
+  color: #5b3fa0;
+}
+
+.pj-btn.ghost:hover {
+  background: #5b3fa0;
+  color: #fff;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+  .pj-container {
+    padding: 28px 18px 0;
+  }
+
+  .pj-controls {
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .pj-page {
+    background-attachment: scroll;
+  }
+
+  .pj-container {
+    padding: 20px 12px 0;
+  }
+
+  .pj-slider {
+    margin-top: 6px;
+  }
+
+  .pj-scroll {
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #5b3fa0 #e5e5e5;
+  }
+
+  .pj-scroll::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .pj-scroll::-webkit-scrollbar-track {
+    background: #e5e5e5;
+    border-radius: 999px;
+  }
+
+  .pj-scroll::-webkit-scrollbar-thumb {
+    background: #5b3fa0;
+    border-radius: 999px;
+  }
+
+  .pj-stage {
+    width: 720px;
+    min-width: 720px;
+    max-width: none;
+    margin: 0;
+  }
+
+  .pj-controls {
+    gap: 10px;
+    margin: 14px auto 24px;
+  }
+
+  .pj-ctrl {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+  .pj-container {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .pj-controls {
+    gap: 8px;
+  }
+
+  .pj-ctrl {
+    width: 32px;
+    height: 32px;
+  }
+}

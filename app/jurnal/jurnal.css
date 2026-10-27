@@ -1,0 +1,233 @@
+.jr-page {
+  min-height: 100vh;
+  font-family: Arial, "Segoe UI", system-ui, sans-serif;
+  color: #111;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(91, 63, 160, 0.1) 0%, rgba(255, 255, 255, 0) 40%),
+    linear-gradient(180deg, #f6f7f8 0%, #ffffff 60%);
+}
+
+.jr-page *,
+.jr-page *::before,
+.jr-page *::after {
+  box-sizing: border-box;
+}
+
+.jr-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+/* ---------- Judul ---------- */
+.jr-heading {
+  margin-top: 28px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #e39a2d;
+}
+
+.jr-sub {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+}
+
+
+.jr-page {
+  min-height: 100vh;
+  font-family: Arial, "Segoe UI", system-ui, sans-serif;
+  color: #111;
+  overflow-x: hidden;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)),
+    url("/images/jurnal.jpg") center / cover no-repeat,
+    radial-gradient(ellipse at 0% 0%, rgba(91, 63, 160, 0.1) 0%, rgba(255, 255, 255, 0) 40%),
+    linear-gradient(180deg, #f6f7f8 0%, #ffffff 60%);
+
+  background-attachment: fixed;
+}
+/* ---------- Daftar kartu ---------- */
+.jr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.jr-card {
+  display: grid;
+  grid-template-columns: 325px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 24px;
+
+  background: #fff;
+  border: 1.5px solid #111;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+.jr-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(75, 42, 138, 0.2);
+}
+
+.jr-cover {
+  width: 100%;
+  max-width: 325px;
+  aspect-ratio: 3 / 2;
+
+  background-color: #f5f5f5;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 1.5px solid #111;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+
+  justify-self: center;
+  align-self: center;
+  overflow: hidden;
+}
+/* ---------- Info ---------- */
+.jr-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.jr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.jr-tags span {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+.jr-year {
+  background: #f5a623;
+  color: #222;
+}
+.jr-index {
+  background: #5b3fa0;
+  color: #fff;
+}
+.jr-volume {
+  border: 1.5px solid #111;
+  background: #fff;
+}
+
+.jr-title {
+  margin-top: 14px;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.jr-journal {
+  margin-top: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #5b3fa0;
+}
+
+.jr-authors {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.jr-abstract {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 23px;
+  text-align: justify;
+  color: #333;
+}
+
+.jr-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.jr-btn {
+  padding: 9px 20px;
+  border: 1.5px solid #5b3fa0;
+  border-radius: 999px;
+  background: #5b3fa0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.jr-btn:hover {
+  background: #4a2f8a;
+}
+.jr-btn.ghost {
+  background: transparent;
+  color: #5b3fa0;
+}
+.jr-btn.ghost:hover {
+  background: #5b3fa0;
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jr-card {
+    transition: none;
+  }
+}
+.jr-urls {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: #f4f1fb;
+  border-left: 4px solid #5b3fa0;
+  border-radius: 8px;
+}
+.jr-urls p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 21px;
+}
+.jr-urls p + p {
+  margin-top: 4px;
+}
+.jr-urls span {
+  font-weight: 700;
+}
+.jr-urls a {
+  color: #2457c5;
+  text-decoration: underline;
+  word-break: break-all;
+}
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .jr-card {
+    grid-template-columns: 1fr;
+  }
+  .jr-cover {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  .jr-title {
+    font-size: 19px;
+    line-height: 26px;
+  }
+}

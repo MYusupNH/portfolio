@@ -1,0 +1,465 @@
+
+/* ========================================
+   ABOUT PAGE
+======================================== */
+
+.about-page {
+  --orange: #e8890c;
+  --orange-soft: #fbb03b;
+  --purple: #4b2a8a;
+  --text-primary: #222;
+  --text-secondary: #444;
+  --text-muted: #666;
+
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+
+  overflow-x: hidden;
+  color: var(--text-primary);
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.93),
+      rgba(255, 255, 255, 0.93)
+    ),
+    url("/images/jendela.jpg") center / cover no-repeat,
+    linear-gradient(180deg, #f6f7f8 0%, #fff 60%);
+
+  background-attachment: fixed;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.about-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 24px;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  align-items: center;
+  gap: 56px;
+  margin-top: 48px;
+}
+
+/* ========================================
+   FOTO PROFIL
+======================================== */
+
+.about-photo-wrap {
+  position: relative;
+  display: flex;
+  height: 380px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.about-blob {
+  position: absolute;
+  inset: 24px 8px 0;
+  border-radius: 58% 42% 55% 45% / 45% 50% 50% 55%;
+  background: var(--orange-soft);
+}
+
+.about-photo {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.about-badge {
+  position: absolute;
+  z-index: 2;
+  right: -8px;
+  bottom: 80px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.about-tag {
+  position: absolute;
+  z-index: 2;
+  bottom: 36px;
+  left: -8px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--orange-soft);
+
+  color: #5a3600;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ========================================
+   TEKS PROFIL
+======================================== */
+
+.about-intro {
+  min-width: 0;
+}
+
+.about-greeting {
+  position: relative;
+  display: inline-block;
+  padding: 7px 16px;
+  border: 1.5px solid var(--orange);
+  border-radius: 8px;
+  background: #fff;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.about-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--orange);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.about-handle.tl {
+  top: -5px;
+  left: -5px;
+}
+
+.about-handle.tr {
+  top: -5px;
+  right: -5px;
+}
+
+.about-handle.bl {
+  bottom: -5px;
+  left: -5px;
+}
+
+.about-handle.br {
+  right: -5px;
+  bottom: -5px;
+}
+
+/* ========================================
+   NAMA
+======================================== */
+
+.about-name {
+  margin: 14px 0 0;
+  color: var(--orange);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   BIOGRAFI
+======================================== */
+
+.about-bio {
+  max-width: 68ch;
+  margin-top: 16px;
+
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8;
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.about-bio p {
+  margin: 0 0 12px;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+}
+
+.about-bio p:last-child {
+  margin-bottom: 0;
+}
+
+.about-bio strong,
+.about-bio b {
+  color: inherit;
+  font-weight: 400;
+}
+
+/* ========================================
+   KONTAK
+======================================== */
+
+.about-connect {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+}
+
+.about-connect::before,
+.about-connect::after {
+  height: 1px;
+  flex: 1;
+  background: #d4d4d4;
+  content: "";
+}
+
+/* ========================================
+   KARTU KONTAK
+======================================== */
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.about-card {
+  display: block;
+  min-width: 0;
+  padding: 14px 16px 12px;
+  border-radius: 14px;
+  background: var(--purple);
+  color: #fff;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(75, 42, 138, 0.25);
+}
+
+.about-card:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+.about-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.about-card hr {
+  margin: 10px 0 8px;
+  border: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.6);
+}
+
+.about-card-link {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ========================================
+   MARQUEE
+======================================== */
+
+.about-marquee {
+  margin-top: 48px;
+  padding: 14px 0;
+  overflow: hidden;
+  border-top: 2px solid #222;
+  border-bottom: 2px solid #222;
+  background: #f1f1f1;
+  transform: rotate(-0.6deg);
+}
+
+.about-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 90px;
+  animation: about-scroll 25s linear infinite;
+}
+
+.about-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+@keyframes about-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================================
+   AKSESIBILITAS
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-marquee-track {
+    animation: none;
+  }
+
+  .about-card {
+    transition: none;
+  }
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+  .about-hero {
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .about-photo-wrap {
+    height: 320px;
+  }
+
+  .about-name {
+    font-size: clamp(28px, 3.8vw, 38px);
+  }
+
+  .about-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 760px) {
+  .about-container {
+    padding: 20px;
+  }
+
+  .about-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .about-photo-wrap {
+    width: 100%;
+    max-width: 340px;
+    height: 320px;
+    margin: 0 auto;
+  }
+
+  .about-intro {
+    text-align: center;
+  }
+
+  .about-name {
+    font-size: clamp(26px, 7vw, 38px);
+    letter-spacing: -0.4px;
+  }
+
+  .about-bio {
+    width: 100%;
+    max-width: 68ch;
+    margin: 16px auto 0;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;
+    font-weight: 400;
+  }
+
+  .about-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-marquee {
+    margin-top: 32px;
+  }
+}
+
+/* ========================================
+   HP KECIL
+======================================== */
+
+@media (max-width: 400px) {
+  .about-container {
+    padding: 16px;
+  }
+
+  .about-photo-wrap {
+    height: 290px;
+  }
+
+  .about-name {
+    font-size: 27px;
+  }
+
+  .about-cards {
+    gap: 10px;
+  }
+
+  .about-card {
+    padding: 12px 10px;
+  }
+
+  .about-bio {
+    font-size: 13px;
+    line-height: 1.75;
+    text-align: justify;
+  }
+}
+

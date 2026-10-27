@@ -1,0 +1,232 @@
+
+/* ==============================
+   NAVBAR UTAMA
+================================ */
+
+.site-navbar,
+.site-navbar *,
+.site-navbar *::before,
+.site-navbar *::after {
+  box-sizing: border-box;
+}
+
+.site-navbar {
+  position: relative;
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  width: 100%;
+  max-width: 1240px;
+  min-height: 64px;
+
+  margin: 0 auto;
+  padding: 8px;
+
+  background: #292929;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==============================
+   TOMBOL BERANDA
+================================ */
+
+.site-nav-home {
+  flex: 0 0 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  color: #fff;
+  background: rgba(255, 255, 255, 0.09);
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.site-nav-home:hover {
+  background: #fbb03b;
+  color: #222;
+  transform: rotate(-5deg);
+}
+
+.site-nav-home.active {
+  color: #222;
+  background: #fbb03b;
+}
+
+/* ==============================
+   MENU NAVIGASI
+================================ */
+
+.site-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.site-nav-item {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 0 10px;
+
+  color: #e7e7e7;
+  background: transparent;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Hover */
+
+.site-nav-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* Menu aktif */
+
+.site-nav-item.active {
+  color: #252525;
+  background: #fff;
+  border-color: #fff;
+}
+
+/* ==============================
+   TABLET
+================================ */
+
+@media (max-width: 1100px) {
+  .site-navbar {
+    gap: 6px;
+    padding: 7px;
+  }
+
+  .site-nav-menu {
+    gap: 2px;
+  }
+
+  .site-nav-item {
+    padding: 0 7px;
+    font-size: 11px;
+  }
+
+  .site-nav-home {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ==============================
+   MOBILE
+================================ */
+
+@media (max-width: 760px) {
+  .site-navbar {
+    width: 100%;
+    min-height: 58px;
+    padding: 6px;
+    gap: 6px;
+
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .site-nav-home {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .site-nav-menu {
+    flex: 1;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .site-nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav-item {
+    flex: 0 0 auto;
+    min-height: 40px;
+
+    padding: 0 13px;
+
+    font-size: 12px;
+  }
+}
+
+/* ==============================
+   LAYAR SANGAT KECIL
+================================ */
+
+@media (max-width: 380px) {
+  .site-navbar {
+    border-radius: 16px;
+  }
+
+  .site-nav-item {
+    padding: 0 11px;
+    font-size: 11px;
+  }
+}
+
+/* ==============================
+   AKSESIBILITAS
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav-home,
+  .site-nav-item {
+    transition: none;
+  }
+}
